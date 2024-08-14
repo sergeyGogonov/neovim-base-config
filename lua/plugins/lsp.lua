@@ -2,10 +2,25 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Sntup language servers.
 local lspconfig = require('lspconfig')
-local configs = require('lspconfig.configs')
+lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.eslint.setup{}
+lspconfig.prismals.setup {}
+lspconfig.cssls.setup {
+    capabilities = capabilities
+}
+lspconfig.golangci_lint_ls.setup {}
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+            diagnostics = {
+                enable = true,
+                experimental = {
+                    enable = true,
+                },
+            },
+    },
+  },
+}
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<leader>lD', vim.diagnostic.open_float)
