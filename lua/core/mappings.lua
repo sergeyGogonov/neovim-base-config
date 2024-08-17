@@ -33,7 +33,7 @@ vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>')
 vim.keymap.set('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>')
 vim.keymap.set('n', '<leader>tv', ':ToggleTerm direction=vertical size=40<CR>')
 -- vim.keymap.set('n', '<leader>E', ':Neotree float reveal<CR>')
-vim.keymap.set("n", "<leader>e", ":Neotree left reveal<CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree toggle float <CR>")
 -- vim.keymap.set('n', '<leader>o', ':Neotree float git_status<CR>')
 
 -- Navigation
